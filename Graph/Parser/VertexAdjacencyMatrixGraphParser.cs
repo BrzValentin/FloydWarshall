@@ -1,24 +1,13 @@
 ﻿namespace Graph.Parser;
 
-public class VertexAdjacencyMatrixGraphParser : IMatrixGraphParser
+public class VertexAdjacencyMatrixGraphParser : VertexAdjacencyMatrixGraphParserBase
 {
-    private readonly string _path;
-
-    public VertexAdjacencyMatrixGraphParser(string path)
+    public VertexAdjacencyMatrixGraphParser(string path) : base(path)
     {
-        _path = path;
     }
 
-    public int[,] Parse()
+    protected override IList<int> ConvertLine(string line)
     {
-        using var sr = new StreamReader(_path, System.Text.Encoding.Default);
-        string line;
-        List<List<int>> matrix = new List<List<int>>();
-        while ((line = sr.ReadLine()) != null)
-        {
-            matrix.Add(Utils.ConvertToInts(line));
-        }
-
-        return Utils.ConvertToArray(matrix);
+        return Utils.ConvertToInts(line);
     }
 }

@@ -9,7 +9,7 @@ public class Utils
         return line.Split(' ').Select(int.Parse).ToList();
     }
 
-    public static T[,] ConvertToArray<T>(List<List<T>> list)
+    public static T[,] ConvertToArray<T>(IList<IList<T>> list)
     {
         int count = list.Count;
         T[,] matrix = new T[count, count];
