@@ -1,7 +1,9 @@
 ﻿namespace Graph;
 
-class Utils
+public class Utils
 {
+    public const string RelativePathToResFile = "..\\..\\..\\..\\Graph\\Res";
+    
     public static List<int> ConvertToInts(string line)
     {
         return line.Split(' ').Select(int.Parse).ToList();
