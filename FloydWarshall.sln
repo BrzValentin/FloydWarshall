@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Graph", "Graph\Graph.csproj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Program", "Program\Program.csproj", "{84F26AF7-0322-4B26-88E0-35F41A2642FC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GraphAlgorithm", "GraphAlgorithm\GraphAlgorithm.csproj", "{2F9ADA16-9344-4B39-9419-DEB2F0146904}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{84F26AF7-0322-4B26-88E0-35F41A2642FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{84F26AF7-0322-4B26-88E0-35F41A2642FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{84F26AF7-0322-4B26-88E0-35F41A2642FC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2F9ADA16-9344-4B39-9419-DEB2F0146904}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F9ADA16-9344-4B39-9419-DEB2F0146904}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F9ADA16-9344-4B39-9419-DEB2F0146904}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F9ADA16-9344-4B39-9419-DEB2F0146904}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
