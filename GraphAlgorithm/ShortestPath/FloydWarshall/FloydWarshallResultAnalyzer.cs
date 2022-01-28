@@ -41,19 +41,20 @@ public class FloydWarshallResultAnalyzer
 
     public void ShowPath(int from, int to)
     {
-        if (to <= from)
-            return;
-        
         Console.WriteLine();
         Console.WriteLine($"Show path from {from} to {to}:");
-
+        if (_parents[from - 1, to - 1] == 0 && from != 1 || from == to)
+        {
+            Console.Write("No path");
+            return;
+        }
+            
         Console.Write($"{to} ");
         int newVert = -1;
         for (int i = to - 1; i != from - 1 && newVert != 0; i = newVert)
         {
             newVert = _parents[from - 1, i];
-            string showResult = newVert == 0 ? from == 1 ? $"{newVert + 1} " : "No path" : $"{newVert + 1} "; 
-            Console.Write(showResult);
+            Console.Write($"{newVert + 1} ");
         }
     }
 

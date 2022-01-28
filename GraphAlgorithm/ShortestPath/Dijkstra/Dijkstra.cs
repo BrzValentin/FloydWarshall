@@ -13,11 +13,11 @@ public class Dijkstra : IAlgorithm
         var parents = new int [n];
         var visited = new bool [n];
 
-        PreInitialization(distance, parents);
+        PreInitialize(distance, parents);
 
         for (int i = 0; i < n; i++)
         {
-            int index = LastNotVisitedMinimum(distance, visited);
+            int index = GetLastNotVisitedMinimum(distance, visited);
             visited[index] = true;
 
             for (int j = 0; j < n; j++)
@@ -32,7 +32,7 @@ public class Dijkstra : IAlgorithm
         }
     }
 
-    private int LastNotVisitedMinimum(double[] distance, bool[] visited)
+    private int GetLastNotVisitedMinimum(double[] distance, bool[] visited)
     {
         double minimum = double.MaxValue;
         int minimumIndex = -1;
@@ -47,7 +47,7 @@ public class Dijkstra : IAlgorithm
         return minimumIndex;
     }
 
-    private void PreInitialization(double[] distance, int[] parents)
+    private void PreInitialize(double[] distance, int[] parents)
     {
         for (int i = 1; i < distance.Length; i++)
         {
