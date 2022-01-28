@@ -38,6 +38,6 @@ public class FloydWarshall
             }
         }
 
-        return new FloydWarshallResult { Dictances = Utils.Copy(b), Parents = Utils.Copy(parents) };
+        return new FloydWarshallResult(Utils.Copy(b),Utils.Copy(parents));
     }
 }

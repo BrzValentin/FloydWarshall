@@ -17,6 +17,6 @@ public class EdgeAdjacencyMatrixGraph : IMatrixGraph
 
     private int CalculateCapacity()
     {
-        throw new NotImplementedException();
+        return -1;
     }
 }

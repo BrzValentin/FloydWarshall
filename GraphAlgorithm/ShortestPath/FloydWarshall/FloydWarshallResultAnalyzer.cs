@@ -5,7 +5,7 @@ public class FloydWarshallResultAnalyzer
     private readonly double[,] _matrix;
     private readonly int[,] _parents;
 
-    public FloydWarshallResultAnalyzer(double[,] matrix, int[,] parents )
+    public FloydWarshallResultAnalyzer(double[,] matrix, int[,] parents)
     {
         _matrix = matrix;
         _parents = parents;
@@ -42,7 +42,7 @@ public class FloydWarshallResultAnalyzer
     public void ShowPath(int from, int to)
     {
         Console.WriteLine();
-        Console.WriteLine($"Show path from {from} to {to}:");
+        Console.WriteLine($"Show shortest path from {from} to {to}:");
         if (_parents[from - 1, to - 1] == 0 && from != 1 || from == to)
         {
             Console.Write("No path");
