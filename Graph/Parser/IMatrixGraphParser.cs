@@ -2,5 +2,5 @@
 
 public interface IMatrixGraphParser
 {
-    int[,] Parse();
+    double[,] Parse();
 }

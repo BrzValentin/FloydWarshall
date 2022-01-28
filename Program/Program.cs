@@ -3,13 +3,14 @@
 using Graph;
 using Graph.Factory;
 using Graph.Parser;
-using GraphAlgorithm;
-using GraphAlgorithm.ShortestPath.Dijkstra;
+using GraphAlgorithm.ShortestPath.FloydWarshall;
 
-var parser = new VertexAdjacencyMatrixWithInfinityGraphParser($"{Utils.RelativePathToResFile}\\VertexAdjacencyMatrixGraphWithInfinity.txt");
+var parser = new VertexAdjacencyMatrixWithInfinityGraphParser($"{Utils.RelativePathToResFile}\\VertexAdjacencyMatrixGraphNetwork.txt");
 var factory = new VertexAdjacencyMatrixGraphFactory(parser);
 var graph = factory.Create();
 
-IAlgorithm dijkstra = new Dijkstra();
-dijkstra.Run(graph);
-Console.WriteLine("Hello, World!");
+var result = new FloydWarshall().Run(graph);
+var analyzer = new FloydWarshallResultAnalyzer(result.Dictances, result.Parents);
+analyzer.ShowParentMatrix();
+analyzer.ShowDistancesMatrix();
+analyzer.ShowPathFromAnyToAny();

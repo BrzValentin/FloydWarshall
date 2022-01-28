@@ -3,10 +3,10 @@
 public class Utils
 {
     public const string RelativePathToResFile = "..\\..\\..\\..\\Graph\\Res";
-    
-    public static List<int> ConvertToInts(string line)
+
+    public static List<double> ConvertToDouble(string line)
     {
-        return line.Split(' ').Select(int.Parse).ToList();
+        return line.Split(' ').Select(double.Parse).ToList();
     }
 
     public static T[,] ConvertToArray<T>(IList<IList<T>> list)
@@ -15,9 +15,36 @@ public class Utils
         T[,] matrix = new T[count, count];
 
         for (int i = 0; i < count; i++)
-            for (int j = 0; j < count; j++)
-                matrix[i, j] = list[i][j];
+        for (int j = 0; j < count; j++)
+            matrix[i, j] = list[i][j];
 
         return matrix;
+    }
+
+    public static T[,] Copy<T>(T[,] array)
+    {
+        int n = array.GetLength(0);
+        var copy = new T[n, n];
+        for (int i = 0; i < n; i++)
+        {
+            for (int j = 0; j < n; j++)
+            {
+                copy[i, j] = array[i, j];
+            }
+        }
+
+        return copy;
+    }
+
+    public static T[] Copy<T>(T[] array)
+    {
+        int n = array.Length;
+        var copy = new T[n];
+        for (int j = 0; j < n; j++)
+        {
+            copy[j] = array[j];
+        }
+        
+        return copy;
     }
 }

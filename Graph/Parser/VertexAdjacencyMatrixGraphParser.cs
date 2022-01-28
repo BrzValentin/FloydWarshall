@@ -6,8 +6,8 @@ public class VertexAdjacencyMatrixGraphParser : VertexAdjacencyMatrixGraphParser
     {
     }
 
-    protected override IList<int> ConvertLine(string line)
+    protected override IList<double> ConvertLine(string line)
     {
-        return Utils.ConvertToInts(line);
+        return Utils.ConvertToDouble(line);
     }
 }

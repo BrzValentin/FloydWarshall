@@ -6,8 +6,8 @@ public class VertexAdjacencyMatrixWithInfinityGraphParser : VertexAdjacencyMatri
     {
     }
 
-    protected override IList<int> ConvertLine(string line)
+    protected override IList<double> ConvertLine(string line)
     {
-        return line.Split(' ').Select(i => i == "I" ? int.MaxValue : int.Parse(i)).ToList();
+        return line.Split(' ').Select(i => i == "I" ? double.PositiveInfinity : double.Parse(i)).ToList();
     }
 }

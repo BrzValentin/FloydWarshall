@@ -9,11 +9,11 @@ public abstract class VertexAdjacencyMatrixGraphParserBase : IMatrixGraphParser
         _path = path;
     }
 
-    public int[,] Parse()
+    public double[,] Parse()
     {
         using var sr = new StreamReader(_path, System.Text.Encoding.Default);
         string line;
-        IList<IList<int>> matrix = new List<IList<int>>();
+        IList<IList<double>> matrix = new List<IList<double>>();
         while ((line = sr.ReadLine()) != null)
         {
             matrix.Add(ConvertLine(line));
@@ -22,5 +22,5 @@ public abstract class VertexAdjacencyMatrixGraphParserBase : IMatrixGraphParser
         return Utils.ConvertToArray(matrix);
     }
 
-    protected abstract IList<int> ConvertLine(string line);
+    protected abstract IList<double> ConvertLine(string line);
 }

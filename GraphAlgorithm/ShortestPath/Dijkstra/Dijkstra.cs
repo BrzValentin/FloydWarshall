@@ -9,7 +9,7 @@ public class Dijkstra : IAlgorithm
     public void Run(IMatrixGraph graph)
     {
         var n = graph.Size;
-        var distance = new int [n];
+        var distance = new double [n];
         var parents = new int [n];
         var visited = new bool [n];
 
@@ -22,19 +22,19 @@ public class Dijkstra : IAlgorithm
 
             for (int j = 0; j < n; j++)
             {
-                var posible = distance[index] + graph.Matrix[index, j];
-                if (!visited[j] && graph.Matrix[index, j] != int.MaxValue && posible < distance[j])
+                var possible = distance[index] + graph.Matrix[index, j];
+                if (!visited[j] && !double.IsInfinity(graph.Matrix[index, j]) && possible < distance[j])
                 {
-                    distance[j] = posible;
-                    parents[j] = index;
+                    distance[j] = possible;
+                    parents[j] = index + 1;
                 }
             }
         }
     }
 
-    private int LastNotVisitedMinimum(int[] distance, bool[] visited)
+    private int LastNotVisitedMinimum(double[] distance, bool[] visited)
     {
-        int minimum = int.MaxValue;
+        double minimum = double.MaxValue;
         int minimumIndex = -1;
 
         for (int i = 0; i < distance.Length; i++)
@@ -47,11 +47,11 @@ public class Dijkstra : IAlgorithm
         return minimumIndex;
     }
 
-    private void PreInitialization(int[] distance, int[] parents)
+    private void PreInitialization(double[] distance, int[] parents)
     {
         for (int i = 1; i < distance.Length; i++)
         {
-            distance[i] = int.MaxValue;
+            distance[i] = Double.PositiveInfinity;
         }
 
         for (int i = 0; i < parents.Length; i++)
