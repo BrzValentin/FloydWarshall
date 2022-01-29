@@ -4,11 +4,11 @@ public class EdgeAdjacencyMatrixGraph : IMatrixGraph
 {
     private readonly int _size;
     private readonly int _capacity;
-    public int[,] Matrix { get; }
+    public double[,] Matrix { get; }
     public int Size { get; }
     public int Сapacity { get; }
 
-    public EdgeAdjacencyMatrixGraph(int[,] matrix)
+    public EdgeAdjacencyMatrixGraph(double[,] matrix)
     {
         Matrix = matrix;
         _size = matrix.Length;
@@ -17,6 +17,6 @@ public class EdgeAdjacencyMatrixGraph : IMatrixGraph
 
     private int CalculateCapacity()
     {
-        throw new NotImplementedException();
+        return -1;
     }
 }

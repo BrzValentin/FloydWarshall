@@ -2,7 +2,7 @@
 
 public interface IMatrixGraph
 {
-    int[,] Matrix { get; }
+    double[,] Matrix { get; }
     int Size { get; }
     int Сapacity { get; }
 }

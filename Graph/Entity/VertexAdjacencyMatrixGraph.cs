@@ -4,11 +4,11 @@ public class VertexAdjacencyMatrixGraph : IMatrixGraph
 {
     private int _size;
     private int _capacity;
-    public int[,] Matrix { get; }
+    public double[,] Matrix { get; }
     public int Size => _size;
     public int Сapacity => _capacity;
 
-    public VertexAdjacencyMatrixGraph(int[,] matrix)
+    public VertexAdjacencyMatrixGraph(double[,] matrix)
     {
         Matrix = matrix;
         _size = matrix.GetLength(0);
