@@ -14,7 +14,7 @@ public class FloydWarshallResultAnalyzer
     public void ShowDistancesMatrix()
     {
         Console.WriteLine();
-        Console.WriteLine("Show distance matrix:");
+        Console.WriteLine("Distance matrix:");
         for (int i = 0; i < _matrix.GetLength(0); i++)
         {
             for (int j = 0; j < _matrix.GetLength(1); j++)
@@ -28,7 +28,7 @@ public class FloydWarshallResultAnalyzer
     public void ShowParentMatrix()
     {
         Console.WriteLine();
-        Console.WriteLine("Show parent matrix:");
+        Console.WriteLine("Parent matrix:");
         for (int i = 0; i < _parents.GetLength(0); i++)
         {
             for (int j = 0; j < _parents.GetLength(1); j++)
@@ -42,7 +42,7 @@ public class FloydWarshallResultAnalyzer
     public void ShowPath(int from, int to)
     {
         Console.WriteLine();
-        Console.WriteLine($"Show shortest path from {from} to {to}:");
+        Console.WriteLine($"Shortest path from {from} to {to}:");
         if (_parents[from - 1, to - 1] == 0 && from != 1 || from == to)
         {
             Console.Write("No path");

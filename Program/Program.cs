@@ -21,3 +21,6 @@ var networkFactory = new VertexAdjacencyMatrixNetworkFactory(parser);
 var network = networkFactory.Create();
 var networkAnalyzerFactory = new PERTNetworkAnalyzerFactory(floydWarshallAlg, network);
 var networkAnalyzer = networkAnalyzerFactory.Create();
+networkAnalyzer.ShowEventMomentTime();
+networkAnalyzer.ShowAllPathsFromSourceToSink();
+networkAnalyzer.ShowDelays();

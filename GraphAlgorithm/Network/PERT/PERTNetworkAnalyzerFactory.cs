@@ -19,7 +19,9 @@ public class PERTNetworkAnalyzerFactory
     {
         _matrixNetwork.ReverseSignWithoutInfinity();
         var result = _floydWarshallAlg.Run(_matrixNetwork);
+        Utils.ReverseSignWithoutInfinity(result.Distances);
 
-        return new PERTNetworkAnalyzer(result.Distances, result.Parents);
+        _matrixNetwork.ReverseSignWithoutInfinity();
+        return new PERTNetworkAnalyzer(_matrixNetwork, result.Parents, result.Distances);
     }
 }

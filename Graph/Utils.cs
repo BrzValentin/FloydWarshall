@@ -9,6 +9,18 @@ public class Utils
         return line.Split(' ').Select(double.Parse).ToList();
     }
 
+    public static void ReverseSignWithoutInfinity(double[,] matrix)
+    {
+        for (int i = 0; i < matrix.GetLength(0); i++)
+        {
+            for (int j = 0; j < matrix.GetLength(1); j++)
+            {
+                if (double.IsInfinity(matrix[i, j])) continue;
+                matrix[i, j] *= -1;
+            }
+        }
+    }
+
     public static T[,] ConvertToArray<T>(IList<IList<T>> list)
     {
         int count = list.Count;
