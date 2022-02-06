@@ -3,6 +3,7 @@
 using Graph;
 using Graph.Factory;
 using Graph.Parser;
+using GraphAlgorithm.DFS;
 using GraphAlgorithm.Network.PERT;
 using GraphAlgorithm.ShortestPath.FloydWarshall;
 
@@ -24,3 +25,6 @@ var networkAnalyzer = networkAnalyzerFactory.Create();
 networkAnalyzer.ShowEventMomentTime();
 networkAnalyzer.ShowAllPathsFromSourceToSink();
 networkAnalyzer.ShowDelays();
+
+var dfs = new DepthFirstSearchForUnorientedGraph(network);
+dfs.Run();
